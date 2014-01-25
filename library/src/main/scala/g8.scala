@@ -173,7 +173,9 @@ object G8Helpers {
       if (fixed.contains(k))
         (k, v)
       else {
-        val in = Console.readLine("%s [%s]: ", k,v).trim
+        Console.printf("%s [%s]: ", k,v)
+        Console.flush()
+        val in = Console.readLine().trim
         (k, if (in.isEmpty) v else in)
       }
     }
